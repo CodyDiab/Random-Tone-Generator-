@@ -1,0 +1,23 @@
+//imports
+
+@mixin flexCenter ($direction,$background){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+}
+
+.container{
+    @include flexCenter(column,rgb(201, 145, 154) );
+    height: 100vh;
+}
+.synth{
+    @include flexCenter(column,rgb(8, 184, 184));
+    border-radius: 5px;
+    height:80%;
+    width:fit-content;
+    margin-top: 0%;
+
+
+}

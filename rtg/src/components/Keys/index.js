@@ -3,16 +3,22 @@ import * as Tone from 'tone';
 
 
 function Keys () {
-   const synth = new Tone.Synth().toDestination();
+   const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+   const now = Tone.now()
    
-   const trigger = (value) => {
-       synth.triggerAttackRelease(value,"8n")
-   }
+//    const trigger = () => {
+       
+//        synth.triggerAttack("C4",now)
+       
+//    }
+//    const release = () => {
+//        synth.triggerRelease(now+1)
+//    }
 
     return(
         <ul id="KEYS">
-  <li data-note="C4" className="key" onClick={trigger("C4")} >
-    <div data-note="C#4" className="black-key" oClick={trigger("C#4")}></div>
+  <li data-note="C4" className="key" onClick={synth.triggerAttack("C4",now)} onBlur={synth.triggerRelease(now+1)} >
+    <div data-note="C#4" className="black-key" oClick={synth.triggerAttack("C#4")} onBlur={synth.triggerRelease(now+1)}></div>
     
   </li>
   <li data-note="D4" className="key">

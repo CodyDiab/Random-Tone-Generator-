@@ -6,11 +6,11 @@ function Keys () {
     const [note,setNote] = useState(null)
    const synth = new Tone.PolySynth(Tone.Synth).toDestination();
    const now = Tone.now()
-    
+   
    const handleKey = (e) => {
     switch (e.key) {
         case "d":
-          return synth.triggerAttack("C4");
+          return synth.triggerAttack("C4")
         case "r":
           return synth.triggerAttack("C#4");
         case "f":
@@ -33,8 +33,7 @@ function Keys () {
           return synth.triggerAttack("A#4");
         case "l":
           return synth.triggerAttack("B4");
-        case "b":
-          return synth.triggerRelease("C4","C#4","D4","D#4","E4","F4","F#4","G4","A4","A#4","B4", now);
+       
         default:
           return;
      }
@@ -58,10 +57,11 @@ function Keys () {
     }
    React.useEffect(() => {
     window.addEventListener('keydown', handleKey);
+    
     // cleanup componenet
-    return () => {
-        window.addEventListener('keyup', handleKeyUp)
-    }
+    // return () => {
+    //     window.addEventListener('keyup', handleKeyUp)
+    // }
    }, []);
    
 //set switch statement to trigger attack

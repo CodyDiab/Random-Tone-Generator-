@@ -3,10 +3,18 @@ import * as Tone from 'tone';
 
 
 function Keys () {
-    const [note,setNote] = useState(null)
-   const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-   const now = Tone.now()
-   
+    // const [note,setNote] = useState(null)
+   const synth = new Tone.Synth
+   synth.toDestination();
+
+  //  const now = Tone.now()
+
+   ///test function
+   function playSynth() {
+     synth.triggerAttackRelease("C2","8n")
+   }
+   ////
+
    const handleKey = (e) => {
     switch (e.key) {
         case "d":
@@ -58,10 +66,9 @@ function Keys () {
    React.useEffect(() => {
     window.addEventListener('keydown', handleKey);
     
-    // cleanup componenet
-    // return () => {
-    //     window.addEventListener('keyup', handleKeyUp)
-    // }
+    return () => {
+        window.addEventListener('keyup', handleKeyUp)
+    }
    }, []);
    
 //set switch statement to trigger attack
@@ -69,7 +76,7 @@ function Keys () {
     return(
         <>
         <ul id="KEYS">
-  <li data-note="C4" className="key">
+  <li data-note="C4" className="key" onClick={playSynth}>
     <div data-note="C#4" className="black-key">R</div>
     D
   </li>

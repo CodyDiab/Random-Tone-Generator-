@@ -10,8 +10,14 @@ function Keys () {
   //  const now = Tone.now()
 
    ///test function
-   function playSynth() {
-     synth.triggerAttackRelease("C2","8n")
+   function playSynthC4() {
+     synth.triggerAttackRelease("C4","8n")
+   }
+   function playSynthD4() {
+    synth.triggerAttackRelease("D4","8n")
+   }
+   function playSynthE4() {
+    synth.triggerAttackRelease("E4","8n")
    }
    ////
 
@@ -76,15 +82,15 @@ function Keys () {
     return(
         <>
         <ul id="KEYS">
-  <li data-note="C4" className="key" onClick={playSynth}>
+  <li data-note="C4" className="key" onClick={playSynthC4}>
     <div data-note="C#4" className="black-key">R</div>
     D
   </li>
-  <li data-note="D4" className="key">
+  <li data-note="D4" className="key" onClick={playSynthD4}>
     <div data-note="D#4" className="black-key">T</div>
     F
   </li>
-  <li data-note="E4" className="key">
+  <li data-note="E4" className="key" onClick={playSynthE4}>
     G
   </li>
   <li data-note="F4" className="key">

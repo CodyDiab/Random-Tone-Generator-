@@ -24,29 +24,29 @@ function Keys () {
    const handleKey = (e) => {
     switch (e.key) {
         case "d":
-          return synth.triggerAttack("C4")
+          return synth.triggerAttackRelease("C4","8n")
         case "r":
-          return synth.triggerAttack("C#4");
+          return synth.triggerAttackRelease("C#4","8n");
         case "f":
-          return synth.triggerAttack("D4");
+          return synth.triggerAttackRelease("D4","8n");
         case "t":
-          return synth.triggerAttack("D#4");
+          return synth.triggerAttackRelease("D#4","8n");
         case "g":
-          return synth.triggerAttack("E4");
+          return synth.triggerAttackRelease("E4","8n");
         case "h":
-          return synth.triggerAttack("F4");
+          return synth.triggerAttackRelease("F4","8n");
         case "u":
-          return synth.triggerAttack("F#4");
+          return synth.triggerAttackRelease("F#4","8n");
         case "j":
-          return synth.triggerAttack("G4");
+          return synth.triggerAttackRelease("G4","8n");
         case "i":
-          return synth.triggerAttack("G#4");
+          return synth.triggerAttackRelease("G#4","8n");
         case "k":
-          return synth.triggerAttack("A4");
+          return synth.triggerAttackRelease("A4","8n");
         case "o":
-          return synth.triggerAttack("A#4");
+          return synth.triggerAttackRelease("A#4","8n");
         case "l":
-          return synth.triggerAttack("B4");
+          return synth.triggerAttackRelease("B4","8n");
        
         default:
           return;
